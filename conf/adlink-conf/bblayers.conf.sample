@@ -29,7 +29,7 @@ BBLAYERS ?= " \
 #ADLINK: add meta-xfce, sema
 BBLAYERS_append = " ${TOPDIR}/../meta-openembedded/meta-xfce"
 BBLAYERS_append = " ${TOPDIR}/../meta-openembedded/meta-gnome"
-BBLAYERS_append = " ${TOPDIR}/../meta-adlink-x86-64bit"
+BBLAYERS_append = " ${TOPDIR}/../meta-adlink-intel"
 BBLAYERS_append = " ${TOPDIR}/../meta-adlink-sema"
 
 #ADLINK: add tpm,tmp2 tools
