@@ -43,8 +43,8 @@ if [ -z "$CONF" ]; then
   echo "Error: CONF variable not defined, please define CONF=adlink or mainline for appending adlink or mainline specific settings."
   return 1
 else
-  if [ ! -d $PWD/meta-adlink-x86-64bit/conf/$CONF-conf ]; then
-    echo "Error: $PWD/meta-adlink-x86-64bit/conf/$CONF-conf directory not found."
+  if [ ! -d $PWD/meta-adlink-intel/conf/$CONF-conf ]; then
+    echo "Error: $PWD/meta-adlink-intel/conf/$CONF-conf directory not found."
     return 1
   fi
 fi
@@ -52,11 +52,11 @@ fi
 source $PROGNAME $BUILDDIR
 
 # append additional settings according to $CONF
-if [ -f $PWD/../meta-adlink-x86-64bit/conf/$CONF-conf/bblayers.conf.append -a -f conf/bblayers.conf ]; then
-  cat $PWD/../meta-adlink-x86-64bit/conf/$CONF-conf/bblayers.conf.append >> conf/bblayers.conf
+if [ -f $PWD/../meta-adlink-intel/conf/$CONF-conf/bblayers.conf.append -a -f conf/bblayers.conf ]; then
+  cat $PWD/../meta-adlink-intel/conf/$CONF-conf/bblayers.conf.append >> conf/bblayers.conf
 fi
-if [ -f $PWD/../meta-adlink-x86-64bit/conf/$CONF-conf/local.conf.append -a -f conf/local.conf ]; then
-  cat $PWD/../meta-adlink-x86-64bit/conf/$CONF-conf/local.conf.append >> conf/local.conf
+if [ -f $PWD/../meta-adlink-intel/conf/$CONF-conf/local.conf.append -a -f conf/local.conf ]; then
+  cat $PWD/../meta-adlink-intel/conf/$CONF-conf/local.conf.append >> conf/local.conf
 fi
 
 unset PWD
