@@ -45,14 +45,14 @@ if [ -z "$TEMPLATECONF" ]; then
     echo "Error: CONF variable not defined, please define CONF=adlink/mainline for TEMPLATECONF."
     return 1
   else
-    if [ ! -d $PWD/meta-adlink-x86-64bit/conf/$CONF-conf ]; then
-      echo "Error: $PWD/meta-adlink-x86-64bit/conf/$CONF-conf directory not found."
+    if [ ! -d $PWD/meta-adlink-intel/conf/$CONF-conf ]; then
+      echo "Error: $PWD/meta-adlink-intel/conf/$CONF-conf directory not found."
       return 1
     fi
     echo "Setup yocto environment for building adlink x86_64 target board."
-    echo "    TEMPLATECONF=$PWD/meta-adlink-x86-64bit/conf/$CONF-conf source $PROGNAME $BUILDDIR"
+    echo "    TEMPLATECONF=$PWD/meta-adlink-intel/conf/$CONF-conf source $PROGNAME $BUILDDIR"
     echo ""
-    TEMPLATECONF="$PWD/meta-adlink-x86-64bit/conf/$CONF-conf" source $PROGNAME $BUILDDIR
+    TEMPLATECONF="$PWD/meta-adlink-intel/conf/$CONF-conf" source $PROGNAME $BUILDDIR
   fi
 else
   source $PROGNAME $BUILDDIR
