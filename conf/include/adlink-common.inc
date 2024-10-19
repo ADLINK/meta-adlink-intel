@@ -1,5 +1,3 @@
-
-
 DISTRO_FEATURES:append = " systemd x11 virtualization opengl vulkan"
 
 
@@ -135,6 +133,4 @@ IMAGE_INSTALL:append = " udev-usbpower udev-satapower udev-gbepower udev-serialp
 APPEND:append = " console=ttyS4,115200n8 console=ttyS5,115200n8 i915.force_probe=*" 
 APPEND += "video=eDP-1:d rootwait console=ttyS0,115200 console=tty0 i915.enable_guc=2"
 APPEND:append = " udmabuf.list_limit=8192"
-
-
 

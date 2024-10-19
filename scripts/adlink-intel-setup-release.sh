@@ -52,7 +52,7 @@ if [ -z "$TEMPLATECONF" ]; then
     echo "Setup yocto environment for building adlink x86_64 target board."
     echo "    TEMPLATECONF=$PWD/meta-adlink-intel/conf/$CONF-conf source $PROGNAME $BUILDDIR"
     echo ""
-    TEMPLATECONF="$PWD/meta-adlink-intel/conf/$CONF-conf" source $PROGNAME $BUILDDIR
+    TEMPLATECONF="$PWD/meta-adlink-intel/conf/templates/default" source $PROGNAME $BUILDDIR
   fi
 else
   source $PROGNAME $BUILDDIR

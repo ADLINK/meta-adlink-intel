@@ -25,7 +25,10 @@ DISTRO_FEATURES:append = " tpm"
 IMAGE_INSTALL:append = " tpm2-tools tpm2-tss tpm2-abrmd"
 
 IMAGE_INSTALL:append = " bmaptool"
-IMAGE_INSTALL:append = " devmem2 xfce4-startup"
+IMAGE_INSTALL:append = " devmem2"
+IMAGE_INSTALL:append = " libgpiod-tools xfce4-startup"
+IMAGE_FSTYPES = "wic.bz2 wic.bmap"
+
 #Tools
 
 # Test Tools
@@ -35,3 +38,8 @@ lmbench memtester mmc-utils net-tools spidev-test stress-ng stressapptest kernel
 KERNEL_VERSION_SANITY_SKIP="1"
 
 #BBMASK += "iotg-yocto-ese-main/recipes-multimedia/onevpl-intel-gpu/"
+
+DISTRO_FEATURES:append = " systemd usrmerge x11wayland xwayland"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"

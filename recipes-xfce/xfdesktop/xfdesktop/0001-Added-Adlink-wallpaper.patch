@@ -1,28 +1,31 @@
-From 7209c9f3c665a197c4dbe120a43632d7957d2969 Mon Sep 17 00:00:00 2001
-From: Dinesh kumar <dineshkumar.varadarajan@adlinktech.com>
-Date: Sat, 4 Apr 2020 19:42:34 +0530
-Subject: [PATCH 1/2] Added Adlink wallpaper
+From 2b6df60b28376e19a89aa9a5bdb1285fa0f7f30e Mon Sep 17 00:00:00 2001
+From: "deepak.s" <deepak.s@adlinktech.com>
+Date: Fri, 29 Mar 2024 14:43:51 +0530
+Subject: [PATCH] Description of the changes
 
 ---
- backgrounds/Makefile.am | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ backgrounds/Makefile.am | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
 
 diff --git a/backgrounds/Makefile.am b/backgrounds/Makefile.am
-index 35857a24..bbfdab05 100644
+index 04342c7..6f6e802 100644
 --- a/backgrounds/Makefile.am
 +++ b/backgrounds/Makefile.am
-@@ -4,10 +4,7 @@
+@@ -4,13 +4,6 @@
  backgroundsdir = $(datadir)/backgrounds/xfce
  
  backgrounds_DATA = \
 -    xfce-blue.jpg \
 -    xfce-stripes.png \
 -    xfce-verticals.png \
--    xfce-teal.jpg
-+    adlink.jpg
- 
+-    xfce-teal.jpg \
+-    xfce-shapes.svg \
+-    xfce-flower.svg \
+-    xfce-leaves.svg
+-
++	adlink.jpg
  
  EXTRA_DIST = $(backgrounds_DATA)
 -- 
-2.17.1
+2.43.2
 

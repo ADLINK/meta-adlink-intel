@@ -1,9 +1,9 @@
-# Kirkstone
+# Scarthgap 
 
-- Kernel version: 5.15
-- Released year: 2022
+- Kernel version: 6.6
+- Released year: 2024
 - Kernel support by Adlink(continuing).
-- Manifest of the Yocto BSP is [here](https://github.com/ADLINK/adlink-manifest/tree/intel-yocto-kirkstone).
+- Manifest of the Yocto BSP is [here](https://github.com/ADLINK/adlink-manifest/tree/intel-yocto-scarthgap).
 
 
 
@@ -12,16 +12,16 @@
 
 | **meta name**         | **Branch** | **commit version**                       |
 | :-------------------- | :--------- | :--------------------------------------- |
-| Poky                  | Kirkstone  | 30656ea54de82cabb818f07af711b96211421c95 |
-| meta-openembedded     | Kirkstone  | 82c75b466e55d7dca7a2364986ecb704cf63d141 |
-| meta-intel            | Kirkstone  | 64e8ccb47e11fc021a2a679f2e05d849b7518461 |
-| meta-adlink-x86-64bit | Kirkstone  | 9a7aa013685c19d76d97d8615c218b7156539844 |
-| iotg-yocto-ese-main   | Kirkstone  | bf5bf8e3022a75aed4d0592e15a3f832c5d35ae6 |
-| meta-virtualization   | Kirkstone  | a517e15529980f8401b25c99a2d7720ac2d8baae |
+| Poky                  | scarthgap  | 6ced2e7ca3b58130154035ad61685cd222909680 |
+| meta-openembedded     | scarthgap  | 2338409efc51cf2022ff5610a9fb689251706e2b |
+| meta-intel            | scarthgap  | d172a00f487a8ea4391b96e0f6cef5279c5a07d7 |
+| meta-adlink-x86-64bit | scarthgap  | 5a140bf2df5a442fcb4164f5ecfa4d97f589eb37 |
+| meta-security         | scarthgap  | 11ea91192d43d7c2b0b95a93aa63ca7e73e38034 |
+| meta-virtualization   | scarthgap  | 54b806b1985f3989722ee308e1073530fe3328c1 |
 
 
 
-## 2. Supported Modules
+## 2. Supported Modules ( Please note, this Branch is under testing for following Module)
 
 
 | **Module Name**         | 
@@ -46,6 +46,7 @@
 **nanoX-BT** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType10/nanoX-BT?lang=en))<BR>
 **nanoX-AL** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType10/nanoX-AL?lang=en))<BR> 
 **LEC-AL** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/SMARC/LEC-AL?lang=en))<BR>
+**LEC-EL** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/SMARC/LEC-EL?lang=en))<BR>
 **Q7-AL** ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/Qseven/Q7-AL?lang=en))<BR>
 
 
@@ -53,3 +54,4 @@
 ## 4. Documentation
 
 Refer to the [wiki](https://github.com/ADLINK/meta-adlink-x86-64bit/wiki) page for instructions on building the Yocto as well as flashing the image.
+
