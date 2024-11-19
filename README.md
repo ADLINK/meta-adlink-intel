@@ -15,7 +15,7 @@
 | Poky                | scarthgap  | cd44e6bd40b0c1f498b3feaeb5e9b72f8bf32d41 |
 | meta-openembedded   | scarthgap  | 72018ca1b1a471226917e8246e8bbf9a374ccf97 |
 | meta-intel          | scarthgap  | c2bc8e27e9cc83654a23e8d89525fd9b1e781eb6 |
-| meta-adlink-intel   | scarthgap  | 34be257f97f6ba2fdde1184f0736284edb4662bc |
+| meta-adlink-intel   | scarthgap  | 202f3e2f87def9cee90a0cd6a40c67218e672cf6 |
 | meta-security       | scarthgap  | 459d837338ca230254baa2994f870bf6eb9d0139 |
 | meta-virtualization | scarthgap  | 6f3c1d8f90947408a6587be222fec575a1ca5195 |
 
@@ -40,7 +40,6 @@
 | **nanoX-EL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType10/nanoX-EL?lang=en))<BR>** |
 | **LEC-EL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/SMARC/LEC-EL?lang=en))<BR>** |
 | **EXPRESS-ID7** ([**More Details**](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType7/Express-ID7?lang=en))<BR> |
-| **cExpress-TL**([**More Details**](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/cExpress-TL)<BR> |
 
 
 
