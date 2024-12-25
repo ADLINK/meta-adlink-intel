@@ -18,6 +18,7 @@ PATCHRESOLVE = "noop"
 # this doesn't mean anything to you.
 CONF_VERSION = "2"
 
+SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 DISTRO_FEATURES:append = " security"
 DISTRO_FEATURES:append = " tpm"
@@ -25,7 +26,8 @@ DISTRO_FEATURES:append = " tpm"
 IMAGE_INSTALL:append = " tpm2-tools tpm2-tss tpm2-abrmd"
 
 IMAGE_INSTALL:append = " bmaptool"
-IMAGE_INSTALL:append = " devmem2 xfce4-startup"
+IMAGE_INSTALL:append = " devmem2 "
+
 #Tools
 
 # Test Tools
