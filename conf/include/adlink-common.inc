@@ -12,7 +12,7 @@ WKS_ADLINK_SWAP_SIZE_MB = "1024"
 WKS_ADLINK_BOOT_SIZE_MB = "128"
 
 # Runtime environment export setting for x11
-IMAGE_INSTALL:append = " xserver-nodm-config xinit-env"
+IMAGE_INSTALL:append = " xinit-env"
 
 # Set features for media
 IMAGE_INSTALL:append = " gstreamer1.0-libav"
@@ -47,8 +47,6 @@ DISTRO_FEATURES:append = " dri3"
 # Required additional host tools
 HOSTTOOLS += "git-lfs"
 
-# Enable ocl-icd and neo for elkhart-lake
-IMAGE_INSTALL:append = " ocl-icd "
 
 # Enable freeglut for elkhart-lake
 IMAGE_INSTALL:append = " freeglut"
@@ -106,7 +104,7 @@ IMAGE_INSTALL:append = " openvino-inference-engine-samples"
 IMAGE_INSTALL:append = " openvino-inference-engine-python3"
 
 # Enable MYRIAD plugin
-IMAGE_INSTALL:append = " openvino-inference-engine-vpu-firmware"
+# IMAGE_INSTALL:append = " openvino-inference-engine-vpu-firmware"
 
 # Include model optimizer to the target image.
 # This is required for running e2e_oss test cases
@@ -120,9 +118,6 @@ IMAGE_INSTALL:append = " open-model-zoo"
 
 ########## clang/llvm size problems
 BAD_RECOMMENDATIONS:append = " clang-staticdev"
-
-# Adding recipes for platform specific changes
-IMAGE_INSTALL:append = " audio-hda-load"
 
 # usb mouse wakeup and SATA PM and GBE and Serial PM
 IMAGE_INSTALL:append = " udev-usbpower udev-satapower udev-gbepower udev-serialpower"
