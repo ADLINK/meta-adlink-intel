@@ -30,7 +30,7 @@
 | **COM-HPC-sIDH([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COM-HPC-Server-Module/COM-HPC-sIDH))<BR>** |
 | **cExpress-MTL([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6Compact/cExpress-MTL?lang=en))<BR>** |
 | **Express-ADP([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/Express-ADP))<BR>** |
-| **cExpress-ALN([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6Compact/cExpress-ALN))<BR>** |
+| **cExpress-ASL/ALN([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6Compact/cExpress-ALN))<BR>** |
 | **cExpress-EL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6Compact/cExpress-EL?lang=en))<BR>** |
 | **cExpress-WL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6Compact/cExpress-WL?lang=en))<BR>** |
 | **cExpress-KL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6Compact/cExpress-KL?lang=en))<BR>** |
