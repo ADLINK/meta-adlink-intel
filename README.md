@@ -39,6 +39,7 @@
 | **Express-ADP ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/Express-ADP?lang=en))<BR>** |
 | **nanoX-EL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType10/nanoX-EL?lang=en))<BR>** |
 | **LEC-EL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/SMARC/LEC-EL?lang=en))<BR>** |
+| **LEC-ASL/ALN ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/SMARC/LEC-ASL?lang=en))<BR>** |
 | **EXPRESS-ID7** ([**More Details**](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType7/Express-ID7?lang=en))<BR> |
 | **Express-TL** [**More Details**](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/Express-TL)<BR> |
 
