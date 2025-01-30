@@ -1,4 +1,4 @@
-#require conf/include/adlink-common.inc
+require conf/include/adlink-common.inc
 
 
 MACHINE ??= "intel-corei7-64"
