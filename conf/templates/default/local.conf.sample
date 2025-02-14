@@ -18,6 +18,10 @@ PATCHRESOLVE = "noop"
 # this doesn't mean anything to you.
 CONF_VERSION = "2"
 
+# Set preferred version of linux-intel to 6.8%
+PREFERRED_VERSION_linux-intel = "6.8%"
+
+SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 DISTRO_FEATURES:append = " security"
 DISTRO_FEATURES:append = " tpm"
@@ -26,14 +30,14 @@ IMAGE_INSTALL:append = " tpm2-tools tpm2-tss tpm2-abrmd"
 
 IMAGE_INSTALL:append = " bmaptool"
 IMAGE_INSTALL:append = " devmem2"
-IMAGE_INSTALL:append = " libgpiod-tools xfce4-startup"
+IMAGE_INSTALL:append = " libgpiod-tools"
 IMAGE_FSTYPES = "wic.bz2 wic.bmap"
 
 #Tools
 
 # Test Tools
 IMAGE_INSTALL:append = " alsa-utils alsa-tools ethtool tcpdump linuxptp fio glmark2 haveged hdparm hostapd i2c-tools iozone3 iptables iproute2 iperf3 libsocketcan \
-lmbench memtester mmc-utils net-tools spidev-test stress-ng stressapptest kernel-devsrc "
+lmbench memtester mmc-utils net-tools spidev-test stress-ng stressapptest kernel-devsrc customemoji "
 
 KERNEL_VERSION_SANITY_SKIP="1"
 
