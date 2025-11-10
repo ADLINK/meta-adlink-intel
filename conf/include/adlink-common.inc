@@ -128,4 +128,4 @@ IMAGE_INSTALL:append = " udev-usbpower udev-satapower udev-gbepower udev-serialp
 APPEND:append = " console=ttyS4,115200n8 console=ttyS5,115200n8 i915.force_probe=*" 
 APPEND += "video=eDP-1:d rootwait console=ttyS0,115200 console=tty0 i915.enable_guc=2"
 APPEND:append = " udmabuf.list_limit=8192"
-
+APPEND:append = " split_lock_detect=off i915.enable_fbc=1 i915.enable_guc=3 i915.max_vfs=7 ignore_msrs=1 report_ignored_msrs=0"
