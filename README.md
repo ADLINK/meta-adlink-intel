@@ -9,7 +9,6 @@
 
 ## 1. Supported Recipes by Adlink
 
-
 | **meta name**       | **Branch** | **commit version**                       |
 | :------------------ | :--------- | :--------------------------------------- |
 | Poky                | scarthgap  | cd44e6bd40b0c1f498b3feaeb5e9b72f8bf32d41 |
@@ -22,7 +21,6 @@
 
 
 ## 2. Supported Modules 
-
 
 | **Module Name**                                              |
 | :----------------------------------------------------------- |
@@ -48,5 +46,10 @@
 
 ## **4. Documentation**
 
-**Refer to the [wiki](https://github.com/ADLINK/meta-adlink-intel/wiki) page for instructions on building the Yocto as well as flashing the image.**
+Refer to the [wiki](https://github.com/ADLINK/meta-adlink-intel/wiki) page for instructions on building the Yocto as well as flashing the image.
+
+> [!NOTE]
+>
+> This Yocto meta-layer licensed under the MIT License.
+> Individual recipes build software under their respective licenses.
 
