@@ -39,7 +39,7 @@
 | EXPRESS-ID7 ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType7/Express-ID7?lang=en))<BR> |
 | Express-TL ([More Details](https://www.adlinktech.com/Products/Computer_on_Modules/COMExpressType6/Express-TL))<BR> |
 
-## 3. Documentation**
+## 3. Documentation
 
 Refer to the [wiki](https://github.com/ADLINK/meta-adlink-intel/wiki) page for instructions on building the Yocto as well as flashing the image.
 
