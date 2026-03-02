@@ -122,7 +122,15 @@ BAD_RECOMMENDATIONS:append = " clang-staticdev"
 # usb mouse wakeup and SATA PM and GBE and Serial PM
 IMAGE_INSTALL:append = " udev-usbpower udev-satapower udev-gbepower udev-serialpower"
 
+# Enable shim and the chain of trust
+DISTRO_FEATURES:append = " efi-secure-boot"
+IMAGE_INSTALL:append = " shim grub-efi"
 
+IMAGE_EFI_BOOT_FILES:append = " \
+    bootx64.efi;EFI/BOOT/shimx64.efi \
+    grubx64.efi;EFI/BOOT/grubx64.efi \
+    bootx64.efi;EFI/BOOT/bootx64.efi \
+"
 
 # Additional serial consoles
 APPEND:append = " console=ttyS4,115200n8 console=ttyS5,115200n8 i915.force_probe=*" 
