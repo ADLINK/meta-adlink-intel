@@ -19,7 +19,10 @@ BBLAYERS ?= " \
   ${TOPDIR}/../meta-virtualization \   
   ${TOPDIR}/../meta-intel \    
   ${TOPDIR}/../meta-openembedded/meta-perl \
-  ${TOPDIR}/../meta-security \     
+  ${TOPDIR}/../meta-security \    
+  ${TOPDIR}/../meta-secure-core/meta-efi-secure-boot \
+  ${TOPDIR}/../meta-secure-core/meta-secure-core-common \
+  ${TOPDIR}/../meta-secure-core/meta-signing-key \ 
  "
  
 BBLAYERS:append = "${TOPDIR}/../meta-adlink-intel "
