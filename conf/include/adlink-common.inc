@@ -131,6 +131,17 @@ IMAGE_EFI_BOOT_FILES:append = " \
     grubx64.efi;EFI/BOOT/grubx64.efi \
     bootx64.efi;EFI/BOOT/bootx64.efi \
 "
+# enable the VA-API hardware plugins
+DISTRO_FEATURES:append = " vaapi"
+ 
+IMAGE_INSTALL:append = " \
+    libva-utils \
+    gstreamer1.0-vaapi \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad \
+    igt-gpu-tools \
+"
 
 # Additional serial consoles
 APPEND:append = " console=ttyS4,115200n8 console=ttyS5,115200n8 i915.force_probe=*" 
