@@ -5,3 +5,4 @@ kconf hardware bsp/intel-dev.cfg
 kconf hardware bsp/module-compress.cfg
 kconf hardware bsp/external-gpus.cfg
 kconf hardware bsp/x2apic.cfg
+kconf hardware bsp/x86_CVE-2026-31431_crypto-algif_aead-disable.cfg
