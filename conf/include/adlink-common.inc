@@ -1,4 +1,4 @@
-DISTRO_FEATURES:append = " systemd x11 virtualization opengl vulkan"
+DISTRO_FEATURES:append = " systemd x11 virtualization opengl vulkan opencl"
 
 
 IMAGE_FSTYPES = " wic.bmap wic.gz"
@@ -18,10 +18,9 @@ IMAGE_INSTALL:append = " xinit-env"
 IMAGE_INSTALL:append = " gstreamer1.0-libav"
 DISTRO_FEATURES:append = " msdk onevpl"
 IMAGE_INSTALL:append = " intel-media-driver"
-IMAGE_INSTALL:append = "${@bb.utils.contains("DISTRO_FEATURES","msdk", " intel-mediasdk", "", d)}"
-IMAGE_INSTALL:append = "${@bb.utils.contains("DISTRO_FEATURES","msdk", " intel-mediasdk-samples", "", d)}"
-IMAGE_INSTALL:append = "${@bb.utils.contains("DISTRO_FEATURES","onevpl", " onevpl onevpl-intel-gpu", "", d)}"
-PACKAGECONFIG:append:pn-gstreamer1.0-libav = " libav"
+IMAGE_INSTALL:append = "${@bb.utils.contains("DISTRO_FEATURES","msdk", " libvpl vpl-gpu-rt", "", d)}"
+IMAGE_INSTALL:append = "${@bb.utils.contains("DISTRO_FEATURES","msdk", " libvpl-tools", "", d)}"
+IMAGE_INSTALL:append = "${@bb.utils.contains("DISTRO_FEATURES","onevpl", " libvpl vpl-gpu-rt", "", d)}"
 PACKAGECONFIG:append:pn-gstreamer1.0-plugins-base = "${@bb.utils.filter('DISTRO_FEATURES', 'opengl', d)}"
 IMAGE_INSTALL:append = " vulkan-loader"
 
@@ -30,15 +29,6 @@ PACKAGECONFIG:append:pn-mesa:class-target = " gallium gallium-llvm"
 MESA_FORCE_DRIVER = "iris"
 PREFERRED_PROVIDER_virtual/mesa-native = "${PREFERRED_PROVIDER_virtual/mesa}-native"
 PACKAGECONFIG:append:pn-mesa-native:class-native = " gles"
-# clang/llvm native build is broken, mesa doing the insane by using native llvm to find out about host llvm
-# make sure some PACKAGECONFIG is at least common in meta-clang clang/llvm
-## Dunfell clang10 is bugged, causing llvm/clang constructors to run twice if tools depending on it is built with
-## shared clang/llvm runtime libraries
-##
-## We still want the compiler to be dynamically linked on the runtime image if possible due to image size concerns
-## reference: https://reviews.llvm.org/file/data/5mlinpbqf726tpeke5xr/PHID-FILE-xmzquxeysicqtqdiuyxi/file
-PACKAGECONFIG:append:pn-clang = " rtti eh  shared-libs"
-PACKAGECONFIG:append:pn-clang-native = " rtti eh"
 
 DISTRO_FEATURES:append = " dri3"
 
@@ -106,9 +96,7 @@ IMAGE_INSTALL:append = " openvino-inference-engine-python3"
 # Enable MYRIAD plugin
 # IMAGE_INSTALL:append = " openvino-inference-engine-vpu-firmware"
 
-# Include model optimizer to the target image.
-# This is required for running e2e_oss test cases
-IMAGE_INSTALL:append = " openvino-model-optimizer"
+# Model Optimizer retired upstream in OpenVINO 2025, replaced by ovc
 
 # python3 packages needed by the inference engine python test script to transform the input image to expected format
 IMAGE_INSTALL:append = " python3-opencv python3-numpy"
@@ -130,13 +118,24 @@ IMAGE_EFI_BOOT_FILES:append = " \
     bootx64.efi;EFI/BOOT/shimx64.efi \
     grubx64.efi;EFI/BOOT/grubx64.efi \
     bootx64.efi;EFI/BOOT/bootx64.efi \
+    grub.cfg;EFI/BOOT/grub.cfg \
+    grub.cfg.sig;EFI/BOOT/grub.cfg.sig \
+    boot-menu.inc;EFI/BOOT/boot-menu.inc \
+    boot-menu.inc.sig;EFI/BOOT/boot-menu.inc.sig \
+    efi-secure-boot.inc;EFI/BOOT/efi-secure-boot.inc \
+    efi-secure-boot.inc.sig;EFI/BOOT/efi-secure-boot.inc.sig \
+    password.inc;EFI/BOOT/password.inc \
+    password.inc.sig;EFI/BOOT/password.inc.sig \
+    grubenv;EFI/BOOT/grubenv \
+    bzImage.sig;bzImage.sig \
 "
 # enable the VA-API hardware plugins
 DISTRO_FEATURES:append = " vaapi"
+PACKAGECONFIG:append:pn-gstreamer1.0-plugins-bad = " va"
  
 IMAGE_INSTALL:append = " \
     libva-utils \
-    gstreamer1.0-vaapi \
+    gstreamer1.0-plugins-bad-va \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \

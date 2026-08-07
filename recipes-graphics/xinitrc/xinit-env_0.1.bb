@@ -10,7 +10,7 @@ PR = "r0"
 
 SRC_URI = "file://xinitrc"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
 	install -d 0755 ${D}/home/root

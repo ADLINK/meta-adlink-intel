@@ -17,11 +17,11 @@ SRC_URI = " \
 	file://99-usb-serial-sleep.rules \
 "
 inherit allarch
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
 	install -d ${D}${sysconfdir}/udev/rules.d
-	install -m 0644 ${WORKDIR}/99-usb-serial-sleep.rules ${D}${sysconfdir}/udev/rules.d/99-usb-serial-sleep.rules
+	install -m 0644 ${UNPACKDIR}/99-usb-serial-sleep.rules ${D}${sysconfdir}/udev/rules.d/99-usb-serial-sleep.rules
 }
 
 

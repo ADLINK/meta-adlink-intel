@@ -18,11 +18,11 @@ SRC_URI = " \
 	file://99-sata-powersave.rules \
 "
 inherit allarch
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
 	install -d ${D}${sysconfdir}/udev/rules.d
-	install -m 0644 ${WORKDIR}/99-sata-powersave.rules ${D}${sysconfdir}/udev/rules.d/99-sata-powersave.rules
+	install -m 0644 ${UNPACKDIR}/99-sata-powersave.rules ${D}${sysconfdir}/udev/rules.d/99-sata-powersave.rules
 }
 
 

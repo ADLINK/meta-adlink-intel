@@ -6,25 +6,26 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  ${TOPDIR}/../poky/meta \
-  ${TOPDIR}/../poky/meta-poky \
-  ${TOPDIR}/../poky/meta-yocto-bsp \
+  ${TOPDIR}/../openembedded-core/meta \
+  ${TOPDIR}/../meta-yocto/meta-poky \
+  ${TOPDIR}/../meta-yocto/meta-yocto-bsp \
   ${TOPDIR}/../meta-openembedded/meta-gnome \
   ${TOPDIR}/../meta-openembedded/meta-oe \
-  ${TOPDIR}/../meta-openembedded/meta-filesystems \    
-  ${TOPDIR}/../meta-openembedded/meta-python \    
-  ${TOPDIR}/../meta-openembedded/meta-networking \        
-  ${TOPDIR}/../meta-openembedded/meta-xfce \   
-  ${TOPDIR}/../meta-openembedded/meta-multimedia \                   
-  ${TOPDIR}/../meta-virtualization \   
-  ${TOPDIR}/../meta-intel \    
+  ${TOPDIR}/../meta-openembedded/meta-filesystems \
+  ${TOPDIR}/../meta-openembedded/meta-python \
+  ${TOPDIR}/../meta-openembedded/meta-networking \
+  ${TOPDIR}/../meta-openembedded/meta-xfce \
+  ${TOPDIR}/../meta-openembedded/meta-multimedia \
+  ${TOPDIR}/../meta-virtualization \
+  ${TOPDIR}/../meta-intel \
   ${TOPDIR}/../meta-openembedded/meta-perl \
-  ${TOPDIR}/../meta-security \    
+  ${TOPDIR}/../meta-security \
   ${TOPDIR}/../meta-secure-core/meta-efi-secure-boot \
   ${TOPDIR}/../meta-secure-core/meta-secure-core-common \
-  ${TOPDIR}/../meta-secure-core/meta-signing-key \ 
+  ${TOPDIR}/../meta-secure-core/meta-signing-key \
  "
  
 BBLAYERS:append = "${TOPDIR}/../meta-adlink-intel "
 BBLAYERS:append = "${TOPDIR}/../meta-adlink-sema "
 BBLAYERS:append = "${TOPDIR}/../meta-security/meta-tpm"
+BBLAYERS:append = " ${TOPDIR}/../meta-openvino"

@@ -25,7 +25,7 @@ LICENSE = "\
     & Firmware-ene_firmware \
     & Firmware-fw_sst_0f28 \
     & Firmware-go7007 \
-    & Firmware-GPLv2 \
+    & GPL-2.0-or-later \
     & Firmware-hfi1_firmware \
     & Firmware-i915 \
     & Firmware-ibt_firmware \
@@ -163,7 +163,6 @@ NO_GENERIC_LICENSE[Firmware-e100] = "LICENCE.e100"
 NO_GENERIC_LICENSE[Firmware-ene_firmware] = "LICENCE.ene_firmware"
 NO_GENERIC_LICENSE[Firmware-fw_sst_0f28] = "LICENCE.fw_sst_0f28"
 NO_GENERIC_LICENSE[Firmware-go7007] = "LICENCE.go7007"
-NO_GENERIC_LICENSE[Firmware-GPLv2] = "GPL-2"
 NO_GENERIC_LICENSE[Firmware-hfi1_firmware] = "LICENSE.hfi1_firmware"
 NO_GENERIC_LICENSE[Firmware-i915] = "LICENSE.i915"
 NO_GENERIC_LICENSE[Firmware-ibt_firmware] = "LICENCE.ibt_firmware"
@@ -209,7 +208,6 @@ PE = "1"
 
 SRCREV = "c9098ec99f5565468a97b59729c0a4f3002b3756"
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git;protocol=https;branch=main"
-S = "${WORKDIR}/git"
 
 inherit allarch
 
@@ -345,8 +343,8 @@ RDEPENDS:${PN}-ath6k += "${PN}-atheros-license"
 RDEPENDS:${PN}-ath9k += "${PN}-atheros-license"
 
 # For carl9170
-LICENSE:${PN}-carl9170 = "Firmware-GPLv2"
-LICENSE:${PN}-gplv2-license = "Firmware-GPLv2"
+LICENSE:${PN}-carl9170 = "GPL-2.0-or-later"
+LICENSE:${PN}-gplv2-license = "GPL-2.0-or-later"
 
 FILES:${PN}-gplv2-license = "${nonarch_base_libdir}/firmware/GPL-2"
 FILES:${PN}-carl9170 = " \

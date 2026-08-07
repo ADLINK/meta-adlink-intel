@@ -7,8 +7,8 @@ usage ()
   echo -e "Usage: . $0 [build directory]"
 }
 
-if [ -x "$PWD/poky/oe-init-build-env" ]; then
-  PROGNAME="$PWD/poky/oe-init-build-env"
+if [ -x "$PWD/openembedded-core/oe-init-build-env" ]; then
+  PROGNAME="$PWD/openembedded-core/oe-init-build-env"
 else
   usage
   return 1

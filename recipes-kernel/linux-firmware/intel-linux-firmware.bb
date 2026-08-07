@@ -12,7 +12,6 @@ SRC_URI = "git://github.com/intel/intel-linux-firmware.git;branch=main;protocol=
 
 SRCREV = "a9d99513513df9e34e6404e1558ad69669d69259"
 
-S = "${WORKDIR}/git"
 
 do_install () {
         install -d ${D}${nonarch_base_libdir}/firmware/i915/
