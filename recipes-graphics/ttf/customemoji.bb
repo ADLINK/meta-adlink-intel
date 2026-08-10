@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 
 SRC_URI = "file://NotoColorEmoji.ttf"
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
     
@@ -17,7 +17,7 @@ do_install() {
 
     
     install -d ${D}${datadir}/fonts/ttf/
-    install -m 0644 ${WORKDIR}/NotoColorEmoji.ttf ${D}${datadir}/fonts/ttf/
+    install -m 0644 ${UNPACKDIR}/NotoColorEmoji.ttf ${D}${datadir}/fonts/ttf/
 }
 
 

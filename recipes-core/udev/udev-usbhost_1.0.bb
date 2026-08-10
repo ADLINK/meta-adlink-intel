@@ -14,12 +14,12 @@ SRC_URI = " \
 	file://99-usbhost-offline.rules \
 "
 inherit allarch
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 
 do_install() {
 	install -d ${D}${sysconfdir}/udev/rules.d
-	install -m 0644 ${WORKDIR}/99-usbhost-bind.rules ${D}${sysconfdir}/udev/rules.d/99-usbhost-bind.rules
-	install -m 0644 ${WORKDIR}/99-usbhost-offline.rules ${D}${sysconfdir}/udev/rules.d/99-usbhost-offline.rules
+	install -m 0644 ${UNPACKDIR}/99-usbhost-bind.rules ${D}${sysconfdir}/udev/rules.d/99-usbhost-bind.rules
+	install -m 0644 ${UNPACKDIR}/99-usbhost-offline.rules ${D}${sysconfdir}/udev/rules.d/99-usbhost-offline.rules
 }
 
 

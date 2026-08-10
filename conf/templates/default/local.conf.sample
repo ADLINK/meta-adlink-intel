@@ -8,7 +8,7 @@ DL_DIR ?= "${TOPDIR}/downloads"
 DISTRO ?= "poky"
 PACKAGE_CLASSES ?= "package_rpm"
 SDKMACHINE ?= "x86_64"
-EXTRA_IMAGE_FEATURES ?= "debug-tweaks tools-testapps tools-sdk "
+EXTRA_IMAGE_FEATURES ?= "allow-empty-password allow-root-login empty-root-password post-install-logging tools-testapps tools-sdk "
 
 # By default disable interactive patch resolution (tasks will just fail instead):
 PATCHRESOLVE = "noop"
@@ -18,8 +18,6 @@ PATCHRESOLVE = "noop"
 # this doesn't mean anything to you.
 CONF_VERSION = "2"
 
-# Set preferred version of linux-intel to 6.8%
-PREFERRED_VERSION_linux-intel = "6.8%"
 
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
@@ -39,11 +37,14 @@ IMAGE_FSTYPES = "wic.bz2 wic.bmap"
 IMAGE_INSTALL:append = " alsa-utils alsa-tools ethtool tcpdump linuxptp fio glmark2 haveged hdparm hostapd i2c-tools iozone3 iptables iproute2 iperf3 libsocketcan \
 lmbench memtester mmc-utils net-tools spidev-test stress-ng stressapptest kernel-devsrc customemoji "
 
-KERNEL_VERSION_SANITY_SKIP="1"
+KERNEL_VERSION_SANITY_SKIP = "1"
 
 #BBMASK += "iotg-yocto-ese-main/recipes-multimedia/onevpl-intel-gpu/"
 
 DISTRO_FEATURES:append = " systemd usrmerge x11wayland xwayland"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
+DISTRO_FEATURES_OPTED_OUT += "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
+
+# Use systemd as the init manager
+INIT_MANAGER = "systemd"

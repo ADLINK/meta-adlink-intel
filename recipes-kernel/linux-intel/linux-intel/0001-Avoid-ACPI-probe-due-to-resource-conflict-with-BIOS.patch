@@ -1,29 +1,48 @@
-From efd7df6bf878df1ae3b7f91c7dd1fec01737bc85 Mon Sep 17 00:00:00 2001
 From: Adlink CCoE <dinesh.v@adlinktech.com>
 Date: Mon, 20 Mar 2023 14:27:37 +0530
-Subject: [PATCH]  Avoid ACPI probe due to resource conflict with BIOS for
- accessing SMBUS register
+Subject: [PATCH] Avoid ACPI probe due to resource conflict with BIOS for accessing SMBUS register
 
----
- drivers/i2c/busses/i2c-i801.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+On ADLINK x86 platforms the BIOS declares the SMBus I/O ports in its ACPI
+tables and continues to access them at runtime. i801_acpi_probe() installs an
+ACPI address-space handler which detects this, sets priv->acpi_reserved and
+inhibits all further access from the driver:
+
+  i801_smbus 0000:00:1f.4: BIOS is accessing SMBus registers
+  i801_smbus 0000:00:1f.4: Driver SMBus register access inhibited
+
+Every subsequent transaction then returns -EBUSY, leaving the SEMA board
+management controller unreachable.
+
+Skip the ACPI probe so the driver retains ownership of the bus. Note that this
+deliberately gives up the kernel's protection against concurrent BIOS and
+driver access to the SMBus.
+
+Rebased for kernel 6.18. The original 2023 version applied against a tree that
+used pcim_iomap_regions() and had no SMBBAR_MMIO handling, so its context no
+longer matched.
+
+Upstream-Status: Inappropriate [ADLINK platform-specific workaround]
+Signed-off-by: Adlink CCoE <dinesh.v@adlinktech.com>
+Signed-off-by: Asuvath MS <asuvath.monikandan@adlinktech.com>
 
 diff --git a/drivers/i2c/busses/i2c-i801.c b/drivers/i2c/busses/i2c-i801.c
-index 74d343d1a36b..8c81b458e7a9 100644
+index 506d69b156f7..f87b9932213b 100644
 --- a/drivers/i2c/busses/i2c-i801.c
 +++ b/drivers/i2c/busses/i2c-i801.c
-@@ -1784,8 +1784,9 @@ static int i801_probe(struct pci_dev *dev, const struct pci_device_id *id)
+@@ -1576,8 +1576,14 @@ static int i801_probe(struct pci_dev *dev, const struct pci_device_id *id)
  		return -ENODEV;
  	}
  
 -	if (i801_acpi_probe(priv))
 -		return -ENODEV;
-+	// Resource conflict with BIOS accessing SMBUS register
-+/*	if (i801_acpi_probe(priv))
-+		return -ENODEV; */
++	/*
++	 * ADLINK: the BIOS declares the SMBus I/O ports in its ACPI tables
++	 * and keeps accessing them at runtime. i801_acpi_probe() installs an
++	 * ACPI address-space handler that detects this, sets acpi_reserved and
++	 * makes every transaction return -EBUSY ("Driver SMBus register access
++	 * inhibited"), leaving the SEMA board management controller
++	 * unreachable. Skip the probe so the driver keeps ownership of the bus.
++	 */
  
- 	err = pcim_iomap_regions(dev, 1 << SMBBAR, DRV_NAME);
- 	if (err) {
--- 
-2.25.1
-
+ 	if (pci_resource_flags(dev, SMBBAR_MMIO) & IORESOURCE_MEM)
+ 		bar = SMBBAR_MMIO;

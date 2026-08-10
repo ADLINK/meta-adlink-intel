@@ -1,7 +1,7 @@
+require ${@bb.utils.contains('DISTRO_FEATURES', 'efi-secure-boot', 'recipes-kernel/linux/linux-yocto-efi-secure-boot.inc', '', d)}
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI:append = "  file://adlink-x68-kmeta;type=kmeta;destsuffix=/adlink-x68-kmeta \
-		    file://0001-Added-i2c-i801-support-for-sema.patch \
-                    file://x86_CVE-2026-43284_xfrm-esp-fix-shared-skb-decrypt.patch \
+		    file://0001-Avoid-ACPI-probe-due-to-resource-conflict-with-BIOS.patch \
 "		    
 KERNEL_FEATURES:append:x86-64 = " adlink.scc"
 
