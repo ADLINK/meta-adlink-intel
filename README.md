@@ -1,22 +1,27 @@
 # Scarthgap 
 
-- Kernel version: 6.6
-- Released year: 2024
+- Kernel version: 6.18.X
+- Released year: 2026
 - Kernel support by Adlink(continuing).
-- Manifest of the Yocto BSP is [here](https://github.com/ADLINK/adlink-manifest/tree/intel-yocto-scarthgap).
-
+- Manifest of the Yocto BSP is [here](https://github.com/ADLINK/adlink-manifest/tree/intel-yocto-wrynose).
+ynose
 
 
 ## 1. Supported Recipes by Adlink
 
-| **meta name**       | **Branch** | **commit version**                       |
-| :------------------ | :--------- | :--------------------------------------- |
-| Poky                | scarthgap  | cd44e6bd40b0c1f498b3feaeb5e9b72f8bf32d41 |
-| meta-openembedded   | scarthgap  | 72018ca1b1a471226917e8246e8bbf9a374ccf97 |
-| meta-intel          | scarthgap  | c2bc8e27e9cc83654a23e8d89525fd9b1e781eb6 |
-| meta-adlink-intel   | scarthgap  | 202f3e2f87def9cee90a0cd6a40c67218e672cf6 |
-| meta-security       | scarthgap  | 459d837338ca230254baa2994f870bf6eb9d0139 |
-| meta-virtualization | scarthgap  | 6f3c1d8f90947408a6587be222fec575a1ca5195 |
+| **meta name**       | **Branch** | **commit version**                        |
+| :------------------ | :--------- | :---------------------------------------  |
+| bitbake             |  2.18      |  fae9db3168dbff1b8c76fe9c6726a9687ff97514 |
+| openembedded-core   |  wrynose   |  f09a0f28aeb54ddd90415dd458338e1565bb5a49 | 
+| meta-yocto          |  wrynose   |  1b132647002eea43a2c7a7f857f63f42dacbc26c | 
+| meta-openembedded   |  wrynose   |  af8b6d6b2f0b11595b0a0d5b82efa3129d52a628 | 
+| meta-intel          |  wrynose   |  79a9681ce83f6bf36aede3aeb8c1707d29bca329 | 
+| meta-openvino       |  wrynose   |  12dac884b60adff733a71b92cad537483a9b6888 | 
+| meta-adlink-intel   |  wrynose   |  5385fa1e5f1fc4a9b127c96aa9d5485d8e351c03 | 
+| meta-adlink-sema    |            |  9e511f1546db812ae76a903f140b85b75daedc0e | 
+| meta-security       |  wrynose   |  c0d1d6200e7a84c39fb940cb1f22aad4b0b3d808 | 
+| meta-virtualization |  wrynose   |  d7b0cd1e5f0f28aec111137f4490763d5db01fd6 | 
+| meta-secure-core    |  wrynose   |  07a99ae241acd488a2feda1ededf87dc70dfde80 | 
 
 ## 2. Supported Modules 
 
