@@ -1,4 +1,4 @@
-# Scarthgap 
+# Wrynose 
 
 - Kernel version: 6.18.X
 - Released year: 2026
@@ -15,7 +15,7 @@ ynose
 | openembedded-core   |  wrynose   |  f09a0f28aeb54ddd90415dd458338e1565bb5a49 | 
 | meta-yocto          |  wrynose   |  1b132647002eea43a2c7a7f857f63f42dacbc26c | 
 | meta-openembedded   |  wrynose   |  af8b6d6b2f0b11595b0a0d5b82efa3129d52a628 | 
-| meta-intel          |  wrynose   |  79a9681ce83f6bf36aede3aeb8c1707d29bca329 | 
+| meta-intel          |  wrynose   |  d6d72afd6ae820e57845d3b2885196ddfb224f26 | 
 | meta-openvino       |  wrynose   |  12dac884b60adff733a71b92cad537483a9b6888 | 
 | meta-adlink-intel   |  wrynose   |  5385fa1e5f1fc4a9b127c96aa9d5485d8e351c03 | 
 | meta-adlink-sema    |            |  9e511f1546db812ae76a903f140b85b75daedc0e | 
